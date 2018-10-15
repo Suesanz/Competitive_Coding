@@ -22,3 +22,14 @@ int *multiply(int A[],int B[],int m,int n){
   }
   return prod;
 }
+
+// function to print the polynomial
+void print_poly(int poly[],int n){
+  for (int i=0;i<n;i++){
+    cout<< poly[i];
+    if (i!=0)
+    cout<<"x^"<<i;
+    if(i!=n-1)
+    cout<<"+";
+  }
+}
