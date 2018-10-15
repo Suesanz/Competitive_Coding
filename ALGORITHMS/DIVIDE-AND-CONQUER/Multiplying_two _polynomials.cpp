@@ -30,6 +30,18 @@ void print_poly(int poly[],int n){
     if (i!=0)
     cout<<"x^"<<i;
     if(i!=n-1)
-    cout<<"+";
+    cout<<" + ";
   }
+}
+
+// Driver program to check the above function
+int main(){
+    // The following array represents polynomial 5 + 10x^2 + 6x^3
+    int A[]={5,0,10,6};
+    // The following array represents polynomial 1 + 2x + 4x^2
+    int B[]={1,2,4};
+    int m=sizeof(A)/sizeof(A[0]);
+    int n=sizeof(B)/sizeof(B[0]);
+    
+  return 0;
 }
