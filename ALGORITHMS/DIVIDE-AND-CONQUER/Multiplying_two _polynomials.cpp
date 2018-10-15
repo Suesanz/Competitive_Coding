@@ -42,6 +42,10 @@ int main(){
     int B[]={1,2,4};
     int m=sizeof(A)/sizeof(A[0]);
     int n=sizeof(B)/sizeof(B[0]);
-    
+    cout<<"first polynomial is "<<endl;
+    cout<<print_poly(A,m);
+    cout<<"second  polynomial is "<<endl;
+    cout<<print_poly(B,n);
+
   return 0;
 }
