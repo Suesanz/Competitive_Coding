@@ -11,4 +11,14 @@ int *multiply(int A[],int B[],int m,int n){
   // Initialze the product polynomial
   for (int i=0;i<m+n-1;i++)
     prod[i]=0;
+
+  // Multiply the polynomial term by term
+  // Take ever term of first polynomial
+  for (int i=0;i<m;i++){
+
+  for (int j=0 ;j<n;j++)
+    prod[i+j] += A[i]*B[j];
+
+  }
+  return prod;
 }
