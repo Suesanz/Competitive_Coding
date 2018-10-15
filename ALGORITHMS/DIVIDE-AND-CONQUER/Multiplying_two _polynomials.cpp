@@ -43,9 +43,14 @@ int main(){
     int m=sizeof(A)/sizeof(A[0]);
     int n=sizeof(B)/sizeof(B[0]);
     cout<<"first polynomial is "<<endl;
-    cout<<print_poly(A,m);
+    print_poly(A,m);
     cout<<"second  polynomial is "<<endl;
-    cout<<print_poly(B,n);
+  print_poly(B,n);
+    int *prod=multiply(A,B,m,n);
+
+    cout<<"Product of the two polynomial is "<<endl;
+    print_poly(prod,m+n-1);
+    
 
   return 0;
 }
