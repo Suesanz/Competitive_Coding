@@ -14,5 +14,17 @@ struct Node *next;
      struct Node* new_node= (struct Node*)malloc(sizeof(struct Node))
      new_node->data=new_data;
      new_node->next=(*head_ref);
-     (*head_ref)=new_node; 
+     (*head_ref)=new_node;
+   }
+   /* Given a reference (pointer to pointer) to the head of a list
+   and a key, deletes the first occurrence of key in linked list */
+   void deleteNode(struct Node**head_ref,int key){
+     //store head Node
+     struct Node* temp =*head_ref,*prev;
+     //if head node itself contain the node to deleted
+     if (temp!==NULL && temp->data==key){
+      *head_ref=temp->next;// change head
+      free(temp);// free old head
+      return;
+     }
    }
