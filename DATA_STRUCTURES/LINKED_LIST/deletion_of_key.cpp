@@ -27,4 +27,18 @@ struct Node *next;
       free(temp);// free old head
       return;
      }
+     // Search for the key to be deleted, keep track of the
+   // previous node as we need to change 'prev->next'
+   while (temp != NULL && temp->data != key)
+   {
+       prev = temp;
+       temp = temp->next;
+   }
+   // If key was not present in linked list
+      if (temp == NULL) return;
+
+      // Unlink the node from linked list
+      prev->next = temp->next;
+
+      free(temp);  // Free memory 
    }
