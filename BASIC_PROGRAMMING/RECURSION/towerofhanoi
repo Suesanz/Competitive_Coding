@@ -1,0 +1,25 @@
+package basicrecursion;
+
+public class towerofhanoi {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		char[] src = { 'a', 'b', 'c', 'd' };
+		char[] dest = {};
+		char[] help = {};
+		hanoi(4,'A', 'B', 'C');
+	}
+
+	private static void hanoi(int n,char src, char dest, char help) {
+		
+		if(n==1) {
+			System.out.println("Move disk 1 "+  " from " +src+" to "+dest);
+			return;
+		}
+		hanoi(n-1,src,help,dest);
+		System.out.println("Move disk "+ n +" from " +src+" to "+dest);
+		hanoi(n-1,help,dest,src);
+	}
+
+}
