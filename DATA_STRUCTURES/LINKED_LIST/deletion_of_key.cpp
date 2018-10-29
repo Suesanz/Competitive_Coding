@@ -40,5 +40,35 @@ struct Node *next;
       // Unlink the node from linked list
       prev->next = temp->next;
 
-      free(temp);  // Free memory 
+      free(temp);  // Free memory
    }
+
+   // This function prints contents of linked list starting from
+// the given node
+void printList(struct Node *node)
+{
+    while (node != NULL)
+    {
+        printf(" %d ", node->data);
+        node = node->next;
+    }
+}
+
+/* Drier program to test above functions*/
+int main()
+{
+   /* Start with the empty list */
+   struct Node* head = NULL;
+
+   push(&head, 7);
+   push(&head, 1);
+   push(&head, 3);
+   push(&head, 2);
+
+   puts("Created Linked List: ");
+   printList(head);
+   deleteNode(&head, 1);
+   puts("\nLinked List after Deletion of 1: ");
+   printList(head);
+   return 0;
+}
