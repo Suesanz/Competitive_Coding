@@ -33,6 +33,25 @@ subset+=to_string(arr[j]) + "|";}
             list.push_back(subset); 
     } 
   
+ // consider every subset 
+    for (string subset : list) 
+    { 
+        // split the subset and print its elements 
+        vector<string> arr = split(subset, '|'); 
+        for (string str: arr) 
+            cout << str << " "; 
+        cout << endl; 
+    } 
+} 
 
-
+// Driver code 
+int main() 
+{ 
+    int arr[] = { 10, 12, 12 }; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+  
+    printPowerSet(arr, n); 
+  
+    return 0; 
+}
 
