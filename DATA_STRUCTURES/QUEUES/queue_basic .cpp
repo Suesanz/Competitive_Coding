@@ -21,4 +21,22 @@ queue->array=(int*)malloc(queue->capacity*sizeof(int));
 return queue;
 }
 
-//Queue is full when size become
+//Queue is full when size become equal to the capacity 
+int isFull(struct Queue* queue)
+{return (queue->size==queue->capacity);}
+
+// Queue is empty when size is 0
+int isEmpty(struct Queue* queue )
+{ return (queue->size==0);}
+
+// function to add an item to the queue 
+// it changes rear and size
+void enqueue(struct Queue* queue,int item )
+{
+if (isFull(queue))
+return ;
+queue->rear =(queue->rear+1)%queue->capacity;
+queue->array[queue->rear]=item;
+queue->size=queue->size+1;
+cout<<"enqued to the queue"<< item ;
+}
