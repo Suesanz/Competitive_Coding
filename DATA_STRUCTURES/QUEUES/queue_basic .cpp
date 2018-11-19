@@ -40,3 +40,43 @@ queue->array[queue->rear]=item;
 queue->size=queue->size+1;
 cout<<"enqued to the queue"<< item ;
 }
+//function to remove the item from queue
+int dequeue(struct Queue* queue)
+{
+    if (isEmpty(queue)) 
+        return INT_MIN; 
+    int item = queue->array[queue->front]; 
+    queue->front = (queue->front + 1)%queue->capacity; 
+    queue->size = queue->size - 1; 
+    return item; 
+} 
+  
+// Function to get front of queue 
+int front(struct Queue* queue) 
+{ 
+    if (isEmpty(queue)) 
+        return INT_MIN; 
+    return queue->array[queue->front]; 
+} 
+  
+// Function to get rear of queue 
+int rear(struct Queue* queue) 
+{ 
+    if (isEmpty(queue)) 
+        return INT_MIN; 
+    return queue->array[queue->rear]; 
+} 
+  
+// Driver program to test above functions./
+int main(){
+struct Queue* queue=createQueue(1000);
+
+enqueu(queue,10);
+enqueue(queue,20);
+enqueue(queue,30);
+enqueue(queue,40);
+cout<<"dequeued from queue\n"<<dequeue(queue);
+cout<<"first item is \n"<<front(queue);
+cout<<"rear item is \n"<<rear(queue);
+return 0;
+}
